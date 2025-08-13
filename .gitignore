@@ -1,0 +1,5 @@
+# Node/Tools
+node_modules/
+.vscode/sftp.json
+.DS_Store
+dist/

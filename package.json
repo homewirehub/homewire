@@ -1,0 +1,15 @@
+{
+  "name": "homewire",
+  "private": true,
+  "scripts": {
+    "dev": "live-server --port=5173 --no-css-inject --open=./index.html",
+    "build": "esbuild index.html --loader:.html=text --outfile=dist/index.html && esbuild assets/js/main.js --minify --outfile=dist/assets/js/main.js && esbuild assets/css/style.css --minify --outfile=dist/assets/css/style.css",
+    "copy": "node -e \"require('fs').cpSync('assets','dist/assets',{recursive:true}); require('fs').cpSync('.htaccess','dist/.htaccess'); require('fs').cpSync('maintenance.html','dist/maintenance.html');\"",
+    "release": "rimraf dist && npm run build && npm run copy"
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.5",
+    "live-server": "^1.2.2",
+    "rimraf": "^6.0.1"
+  }
+}
