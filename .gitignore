@@ -3,3 +3,6 @@ node_modules/
 .vscode/sftp.json
 .DS_Store
 dist/
+
+# Editor-Konfiguration bleibt lokal
+.vscode/
